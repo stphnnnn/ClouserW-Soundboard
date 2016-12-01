@@ -1,30 +1,66 @@
+html {
+  font-size: 16px;
+  text-align: center;
+  font-size: sans-serif;
+}
+
 body {
   background: #000000;
-  font-size: 18px;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .buttons {
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
 }
 
 button {
   font-size: 1em;
-  color: #FFFFFF;
+  color: #000000;
   margin: 20px;
   padding: 20px 40px;
-  background: red;
+  background: #FFFFFF;
   border: 0;
   outline: 0;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  font-size: 1em;
+  color: #000000;
+  margin: 10px;
+  padding: 20px 40px;
+  background: #FFFFFF;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-  background: darkred;
+  background: #CCCCCC;
+}
+
+.back {
+  background:none;
+  color: #FFFFFF;
+}
+
+.back:hover {
+  background:none;
+  opacity: 0.5;
 }

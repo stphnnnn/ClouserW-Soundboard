@@ -1,4 +1,4 @@
-<?php $files = glob("*/"); ?>
+<?php $files = glob("soundboards/*/"); ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="buttons">
-    <?php foreach($files as $file) { ?>
-			<?php $title = ucwords(pathinfo($file, PATHINFO_FILENAME)); ?>
-      <a href="<?php echo $file; ?>"><button><?php echo $title; ?></button></a>
-    <?php } ?>
-  </div>
+	<div class="container">
+	  <div class="buttons">
+	    <?php foreach($files as $file) { ?>
+				<?php $title = ucwords(str_replace("-", " ", pathinfo($file, PATHINFO_FILENAME))); ?>
+	      <a href="<?php echo $file; ?>"><button><?php echo $title; ?></button></a>
+	    <?php } ?>
+	  </div>
+	</div>
 </body>
 </html>
