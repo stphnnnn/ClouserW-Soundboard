@@ -1,4 +1,4 @@
-<?php $files = glob("sounds/*.{mp3, ogg, wav}", GLOB_BRACE); ?>
+<?php $files = glob("*/"); ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -7,22 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    $(function() {
-      $("audio").removeAttr("controls").each(function(i, audioElement) {
-        var audio = $(this);
-        var that = this;
-        $(".players").append($('<button>'+audio.attr("title")+'</button>').click(function() {
-          that.play();
-        }));
-      });
-    });
-  </script>
-  <div class="players">
+  <div class="buttons">
     <?php foreach($files as $file) { ?>
-      <?php $title = str_replace(".ogg", "", str_replace("sounds/", "", $file)); ?>
-      <audio src="<?php echo $file; ?>" controls autobuffer="true" title="<?php echo $title ?>"></audio>
+			<?php $title = ucwords(pathinfo($file, PATHINFO_FILENAME)); ?>
+      <a href="<?php echo $file; ?>"><button><?php echo $title; ?></button></a>
     <?php } ?>
   </div>
 </body>
